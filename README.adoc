@@ -1,0 +1,20 @@
+= Artifact-server
+
+This is a mini project to have a mini artifact server running locally.
+That can be used with https://github.com/nektos/act[act] for instance.
+
+See https://github.com/nektos/act/issues/329#issuecomment-786343296[issue #329] for context.
+
+== Usage
+
+The easiest way is to use Docker:
+
+    docker build -t artisvr .
+    docker run --rm -it --name artifact-server -p 80:8080 -p 8080:8080 artisvr
+
+NOTE: You may be suprised about mapping the port `:8080` of the container to __both__ `:8080` and `:80`. You can read https://github.com/nektos/act/issues/329#issuecomment-854838927[here] for more context. 
+
+Run `act`:
+
+    export ACTIONS_CACHE_URL=localhost:8080
+    act <...>
