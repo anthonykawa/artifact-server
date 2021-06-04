@@ -11,7 +11,7 @@ The easiest way is to use Docker:
 
     docker run --rm -it --name artifact-server -p 80:8080 -p 8080:8080 chevdor/artisvr
 
-If you prefer to build the image yourself, if will cost you one more command :)
+If you prefer to build the image yourself, it will cost you one more command :)
 
     docker build -t artisvr .
     docker run --rm -it --name artifact-server -p 80:8080 -p 8080:8080 artisvr
