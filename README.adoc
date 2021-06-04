@@ -9,10 +9,17 @@ See https://github.com/nektos/act/issues/329#issuecomment-786343296[issue #329] 
 
 The easiest way is to use Docker:
 
+    docker run --rm -it --name artifact-server -p 80:8080 -p 8080:8080 chevdor/artisvr
+
+If you prefer to build the image yourself, if will cost you one more command :)
+
     docker build -t artisvr .
     docker run --rm -it --name artifact-server -p 80:8080 -p 8080:8080 artisvr
 
 NOTE: You may be suprised about mapping the port `:8080` of the container to __both__ `:8080` and `:80`. You can read https://github.com/nektos/act/issues/329#issuecomment-854838927[here] for more context. 
+
+
+
 
 Run `act`:
 
